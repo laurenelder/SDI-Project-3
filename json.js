@@ -14,7 +14,7 @@ var json = {
 			"nitrous":	100,
 			"boost":	12,
 			"weight":	3000
-		};
+		},
 		"camaro": {
 			"make":		"Chevy",
 			"model": 	"Camaro",
@@ -24,7 +24,7 @@ var json = {
 			"nitrous":	150,
 			"boost":	8,
 			"weight":	3600
-		};
+		},
 		"integra": {
 			"make":		"Acura",
 			"model": 	"Integra Type R",
@@ -34,7 +34,7 @@ var json = {
 			"nitrous":	75,
 			"boost":	24,
 			"weight":	2700
-		};
+		},
 		"viper": {
 			"make":		"Dodge",
 			"model": 	"Viper",
@@ -44,6 +44,10 @@ var json = {
 			"nitrous":	0,
 			"boost":	0,
 			"weight":	3400
-		};
-	};
+		}
+	}
+};
+
+for (var key in json.dragCar) {
+	var car = json.dragCar[key];
 };
