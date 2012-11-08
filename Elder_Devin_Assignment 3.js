@@ -13,18 +13,6 @@ console.log(json.dragCar.viper);
 
 
 // Global Variables
-var nitrous = [
-		json.dragCar.mustang.nitrous,
-		json.dragCar.camaro.nitrous,
-		json.dragCar.integra.nitrous,
-		json.dragCar.viper.nitrous
-	];
-var oemHp = [
-		json.dragCar.mustang.oemHp,
-		json.dragCar.camaro.oemHp,
-		json.dragCar.integra.oemHp,
-		json.dragCar.viper.oemHp
-	];
 //var mModHp =
 //var cModHp =
 //var iModHp =
@@ -34,14 +22,14 @@ console.log("These are the stats for the cars that will be racing today.");
 
 // Object Function
 var carData = function(car) {
-	mCar = car.mustang;
-	cCar = car.camaro;
-	iCar = car.integra;
-	vCar = car.viper;
-return  mCar,
-		cCar,
-		iCar,
-		vCar
+	var	returnMCar = car.mustang
+	var	returnCCar = car.camaro
+	var	returnICar = car.integra
+	var	returnVCar = car.viper
+return  returnMCar,
+		returnCCar,
+		returnICar,
+		returnVCar
 };
 
 // String Function
@@ -74,11 +62,11 @@ var stats = function(js) {
 
 // Array Function
 var boostPsi = function(m, c, i ,v) {
-	var vModdedPsi = m / 20 + 1
-	var cModdedPsi = c / 20 + 1
-	var iModdedPsi = i / 20 + 1
-	var vModdedPsi = v / 20 + 1
-	return	vModdedPsi,
+	var returnMModdedPsi = m / 20 + 1
+	var returnCModdedPsi = c / 20 + 1
+	var returnIModdedPsi = i / 20 + 1
+	var returnVModdedPsi = v / 20 + 1
+	return	mModdedPsi,
 			cModdedPsi,
 			iModdedPsi,
 			vModdedPsi
@@ -90,14 +78,14 @@ var boostPsi = function(m, c, i ,v) {
 			vModdedPsi
 		];
 	for (var i = 0; i < 4; i++) {
-		var mModdedPsiHp = moddedPsi[0] + mCar.oemHp
-		var cModdedPsiHp = moddedPsi[1] + cCar.oemHp
-		var	iModdedPsiHp = moddedPsi[2] + iCar.oemHp
-		var vModdedPsiHp = moddedPsi[3] + vCar.oemHp
-		return	mModdedPsiHp,
-				cModdedPsiHp,
-				iModdedPsiHp,
-				vModdedPsiHp
+		var returnMModdedPsiHp = moddedPsi[0] + mCar.oemHp
+		var returnCModdedPsiHp = moddedPsi[1] + cCar.oemHp
+		var	returnIModdedPsiHp = moddedPsi[2] + iCar.oemHp
+		var returnVModdedPsiHp = moddedPsi[3] + vCar.oemHp
+		return	returnMModdedPsiHp,
+				returnCModdedPsiHp,
+				returnIModdedPsiHp,
+				returnVModdedPsiHp
 	var ModdedPsiHp = [
 			mModdedPsiHp,
 			cModdedPsiHp,
@@ -105,15 +93,15 @@ var boostPsi = function(m, c, i ,v) {
 			iModdedPsiHp
 		];
 		for (var i = 0; i < 4; i++){
-			var mModdedHp = mModdedPsiHp + nitrous[i]
-			var cModdedHp = cModdedPsiHp + nitrous[i]
-			var	iModdedHp = iModdedPsiHp + nitrous[i]
-			var vModdedHp = vModdedPsiHp + nitrous[i]
+			var returnMModdedHp = mModdedPsiHp + mCar.nitrous
+			var returnCModdedHp = cModdedPsiHp + cCar.nitrous
+			var	returnIModdedHp = iModdedPsiHp + iCar.nitrous
+			var returnVModdedHp = vModdedPsiHp + vCar.nitrous
 			console.log(mModdedHp)
-			return	mModdedHp, 
-					cModdedHp, 
-					iModdedHp, 
-					vModdedHp
+			return	returnMModdedHp, 
+					returnCModdedHp, 
+					returnIModdedHp, 
+					returnVModdedHp
 			};
 		};
 	};
@@ -177,13 +165,28 @@ var winner = function() {
 	};
 };
 
+// Returned Variables
+var	mCar = carData.returnMCar,
+	cCar = carData.returnCCar,
+	iCar = carData.returnICar,
+	vCar = carData.returnVCar
+var	mModdedPsi = boostPsi.returnMModdedPsi,
+	cModdedPsi = boostPsi.returnCModdedPsi,
+	iModdedPsi = boostPsi.returnIModdedPsi,
+	vModdedPsi = boostPsi.returnVModdedPsi
+var mModdedPsiHp = boostPsi.returnMModdedPsiHp,
+	cModdedPsiHp = boostPsi.returnCModdedPsiHp,
+	iModdedPsiHp = boostPsi.returnIModdedPsiHp,
+	vModdedPsiHp = boostPsi.returnVModdedPsiHp
+var mModdedHp = boostPsi.returnMModdedHp
+	cModdedHp = boostPsi.returnCModdedHp
+	iModdedHp = boostPsi.returnIModdedHp
+	vModdedHp = boostPsi.returnVModdedHp
+
 carData(json.dragCar)
 stats(json)
-boostPsi(mCar.boost,
-		cCar.boost,
-		iCar.boost,
-		vCar.boost)
+boostPsi(mCar.boost, cCar.boost, iCar.boost, vCar.boost)
 moddedHp()
 wgtHpRatio()
 winner()
-console.log(vModdedPsi)
+console.log(mCar)
