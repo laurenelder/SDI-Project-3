@@ -9,18 +9,20 @@ var json = {
 			"make":		"Ford",
 			"model": 	"Mustang",
 			"year":		"1993",
-			"engine":	"347 cid",
+			"engine":	"347cid",
 			"oemHp":	380,
+			"moddedHp": 
 			"nitrous":	100,
 			"boost":	12,
 			"weight":	3000
-		},
+			},
 		"camaro": {
 			"make":		"Chevy",
 			"model": 	"Camaro",
 			"year":		"1986",
-			"engine":	"350 cid",
+			"engine":	"350cid",
 			"oemHp":	385,
+			"moddedHp": 
 			"nitrous":	150,
 			"boost":	8,
 			"weight":	3600
@@ -29,8 +31,9 @@ var json = {
 			"make":		"Acura",
 			"model": 	"Integra Type R",
 			"year":		"2000",
-			"engine":	"110 cid",
+			"engine":	"110cid",
 			"oemHp":	180,
+			"moddedHp": 
 			"nitrous":	75,
 			"boost":	24,
 			"weight":	2700
@@ -39,8 +42,9 @@ var json = {
 			"make":		"Dodge",
 			"model": 	"Viper",
 			"year":		"2010",
-			"engine":	"510",
+			"engine":	"510cid",
 			"oemHp":	600,
+			"moddedHp": 
 			"nitrous":	0,
 			"boost":	0,
 			"weight":	3400
