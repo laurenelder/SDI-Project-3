@@ -1,7 +1,7 @@
 // Devin "Lauren" Elder
 // Term 1211
 // Project 3
-// Date
+// 11/08/2012
 
 var json = {
 	"dragCar": {
@@ -11,7 +11,7 @@ var json = {
 			"year":		"1993",
 			"engine":	"347cid",
 			"oemHp":	380,
-			"moddedHp": 
+			"moddedHp":	0,
 			"nitrous":	100,
 			"boost":	12,
 			"weight":	3000
@@ -22,7 +22,7 @@ var json = {
 			"year":		"1986",
 			"engine":	"350cid",
 			"oemHp":	385,
-			"moddedHp": 
+			"moddedHp":	0,
 			"nitrous":	150,
 			"boost":	8,
 			"weight":	3600
@@ -33,7 +33,7 @@ var json = {
 			"year":		"2000",
 			"engine":	"110cid",
 			"oemHp":	180,
-			"moddedHp": 
+			"moddedHp":	0,
 			"nitrous":	75,
 			"boost":	24,
 			"weight":	2700
@@ -44,14 +44,10 @@ var json = {
 			"year":		"2010",
 			"engine":	"510cid",
 			"oemHp":	600,
-			"moddedHp": 
+			"moddedHp":	0,
 			"nitrous":	0,
 			"boost":	0,
 			"weight":	3400
 		}
 	}
-};
-
-for (var key in json.dragCar) {
-	var car = json.dragCar[key];
 };

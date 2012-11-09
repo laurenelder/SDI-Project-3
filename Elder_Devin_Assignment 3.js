@@ -1,7 +1,7 @@
 // Devin "Lauren" Elder
 // Term 1211
 // Project 3
-// Date
+// 11/082012
 
 /*
 console.log(json.dragCar.mustang);
@@ -21,15 +21,17 @@ console.log(json.dragCar.viper);
 console.log("These are the stats for the cars that will be racing today.");
 
 // Object Function
-var carData = function(car) {
-	var	returnMCar = car.mustang
-	var	returnCCar = car.camaro
-	var	returnICar = car.integra
-	var	returnVCar = car.viper
-return  returnMCar,
-		returnCCar,
-		returnICar,
-		returnVCar
+var carData =  {
+	"returnMCar": json.dragCar.mustang,
+	"returnCCar": json.dragCar.camaro,
+	"returnICar": json.dragCar.integra,
+	"returnVCar": json.dragCar.viper,
+	"setNewHp": function() {
+		set.returnMCar.moddedHp = mModdedHp,
+		set.returnCCar.moddedHp = cModdedHp,
+		set.returnICar.moddedHp = iModdedHp,
+		set.returnVCar.moddedHp = vModdedHp
+	};
 };
 
 // String Function
@@ -66,13 +68,13 @@ var boostPsi = function(m, c, i ,v) {
 	var returnCModdedPsi = c / 20 + 1
 	var returnIModdedPsi = i / 20 + 1
 	var returnVModdedPsi = v / 20 + 1
-	return	mModdedPsi,
-			cModdedPsi,
-			iModdedPsi,
-			vModdedPsi
+	return	returnMModdedPsi,
+			returnCModdedPsi,
+			returnIModdedPsi,
+			returnVModdedPsi
 	var moddedHp = function() {
 		var moddedPsi = [
-			vModdedPsi,
+			mModdedPsi,
 			cModdedPsi,
 			iModdedPsi,
 			vModdedPsi
@@ -93,30 +95,30 @@ var boostPsi = function(m, c, i ,v) {
 			iModdedPsiHp
 		];
 		for (var i = 0; i < 4; i++){
-			var returnMModdedHp = mModdedPsiHp + mCar.nitrous
-			var returnCModdedHp = cModdedPsiHp + cCar.nitrous
-			var	returnIModdedHp = iModdedPsiHp + iCar.nitrous
-			var returnVModdedHp = vModdedPsiHp + vCar.nitrous
-			console.log(mModdedHp)
-			return	returnMModdedHp, 
-					returnCModdedHp, 
-					returnIModdedHp, 
-					returnVModdedHp
+				var returnMModdedHp = mModdedPsiHp + mCar.nitrous
+				var returnCModdedHp = cModdedPsiHp + cCar.nitrous
+				var	returnIModdedHp = iModdedPsiHp + iCar.nitrous
+				var returnVModdedHp = vModdedPsiHp + vCar.nitrous
+				console.log(mModdedHp)
 			};
 		};
 	};
+	var ModdedHp = moddedHp()
+	return ModdedHp
 };
 
 // Number Function
 var wgtHpRatio = function() {
-		mWgtHpRatio = mCar.weight / mModdedHp
-		cWgtHpRatio = cCar.weight / cModdedHp
-		iWgtHpRatio = iCar.weight / iModdedHp
-		vWgtHpRatio = vCar.weight / vModdedHp
-	return	mWgtHpRatio,
-			cWgtHpRatio,
-			iWgtHpRatio,
-			vWgtHpRatio
+	for (i = 0; i < 4; i++) {
+		returnMWgtHpRatio = mCar.weight / mModdedHp
+		returnCWgtHpRatio = cCar.weight / cModdedHp
+		returnIWgtHpRatio = iCar.weight / iModdedHp
+		returnVWgtHpRatio = vCar.weight / vModdedHp
+	return	returnMWgtHpRatio,
+			returnCWgtHpRatio,
+			returnIWgtHpRatio,
+			returnVWgtHpRatio
+		};
 };
 
 // Boolean Function
@@ -178,15 +180,24 @@ var mModdedPsiHp = boostPsi.returnMModdedPsiHp,
 	cModdedPsiHp = boostPsi.returnCModdedPsiHp,
 	iModdedPsiHp = boostPsi.returnIModdedPsiHp,
 	vModdedPsiHp = boostPsi.returnVModdedPsiHp
-var mModdedHp = boostPsi.returnMModdedHp
-	cModdedHp = boostPsi.returnCModdedHp
-	iModdedHp = boostPsi.returnIModdedHp
+var mModdedHp = boostPsi.returnMModdedHp,
+	cModdedHp = boostPsi.returnCModdedHp,
+	iModdedHp = boostPsi.returnIModdedHp,
 	vModdedHp = boostPsi.returnVModdedHp
+var mWgtHpRatio = wgtHpRatio.returnMWgtHpRatio,
+	cWgtHpRatio = wgtHpRatio.returnCWgtHpRatio,
+	iWgtHpRatio = wgtHpRatio.returnIWgtHpRatio,
+	vWgtHpRatio = wgtHpRatio.returnVWgtHpRatio
+	
 
-carData(json.dragCar)
 stats(json)
 boostPsi(mCar.boost, cCar.boost, iCar.boost, vCar.boost)
-moddedHp()
+boostPsi.ModdedHp
+carData.setNewHp(mModdedHp, cModdedHp, iModdedHp, vModdedHp);
 wgtHpRatio()
 winner()
+console.log(mModdedPsi)
+console.log(cModdedHp)
+console.log(iModdedHp)
+console.log(vModdedHp)
 console.log(mCar)
