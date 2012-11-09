@@ -94,7 +94,7 @@ var boostPsi = function(m, c, i ,v) {
 			iModdedPsiHp,
 			iModdedPsiHp
 		];
-		for (var i = 0; i < 4; i++){
+		while (i < 4){
 				var returnMModdedHp = mModdedPsiHp + mCar.nitrous
 				var returnCModdedHp = cModdedPsiHp + cCar.nitrous
 				var	returnIModdedHp = iModdedPsiHp + iCar.nitrous
